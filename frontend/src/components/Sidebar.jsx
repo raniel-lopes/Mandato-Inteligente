@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Home, Users, Map, FileText, Calendar, Bell, HelpCircle, Settings } from "lucide-react";
 
 const menuItems = [
@@ -66,25 +67,25 @@ export default function Sidebar() {
                                         <ul className="pl-8 mt-1 space-y-1">
                                             {item.subItems.map((subItem, subIndex) => (
                                                 <li key={subIndex}>
-                                                    <a
-                                                        href={subItem.link}
+                                                    <Link
+                                                        to={subItem.link}
                                                         className="block p-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md"
                                                     >
                                                         {subItem.label}
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                             ))}
                                         </ul>
                                     )}
                                 </>
                             ) : (
-                                <a
-                                    href={item.link}
+                                <Link
+                                    to={item.link}
                                     className="flex items-center gap-3 p-2 rounded-md hover:bg-gray-100"
                                 >
                                     {item.icon}
                                     <span>{item.label}</span>
-                                </a>
+                                </Link>
                             )}
                         </li>
                     ))}
