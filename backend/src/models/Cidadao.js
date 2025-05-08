@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
-const Eleitor = sequelize.define('Eleitor', {
+const Cidadao = sequelize.define('Cidadao', {
     nomeCompleto: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -94,6 +94,9 @@ const Eleitor = sequelize.define('Eleitor', {
         type: DataTypes.STRING,
         allowNull: true,
     },
+}, {
+    timestamps: true, // Adiciona createdAt e updatedAt
+    tableName: 'cidadaos', // Nome da tabela no banco de dados
 });
 
-module.exports = Eleitor;
+module.exports = Cidadao;

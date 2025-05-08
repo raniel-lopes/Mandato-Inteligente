@@ -8,7 +8,7 @@ export default function EleitorFormAndList() {
 
     // Buscar eleitores ao carregar o componente
     useEffect(() => {
-        axios.get('http://localhost:5000/api/eleitores')
+        axios.get('http://localhost:5000/api/cidadaos')
             .then(res => setEleitores(res.data))
             .catch(err => console.error('Erro ao buscar eleitores:', err));
     }, []);
